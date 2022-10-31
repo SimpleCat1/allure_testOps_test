@@ -35,7 +35,7 @@ public class GithubPageStepTests extends BasePageDemoQA {
         step("Нажать на вкладку Issues", () -> {
             steps.clickOnLocator(data.elementIssues);
         });
-        step("Найти Isseu с \"" + data.numberIssues + "\" номером", () -> {
+        step("Найти Isseu с \"" + data.textIssues + "\" номером", () -> {
             steps.checkTextLocator(data.numberIssues, data.textIssues);
         });
     }
