@@ -39,4 +39,4 @@ task test_ui(type: Test) {
         includeTags "critical"
     }
 }
-wrapper.gradleVersion='6.9'
+wrapper.gradleVersion='7.4.1'
