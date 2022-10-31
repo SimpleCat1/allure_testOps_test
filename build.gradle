@@ -34,9 +34,15 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
 
-task test_ui(type: Test) {
-    useJUnitPlatform {
-        includeTags "critical"
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
 }
-wrapper.gradleVersion='7.4.1'
